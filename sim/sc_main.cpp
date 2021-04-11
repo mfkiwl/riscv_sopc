@@ -49,8 +49,8 @@ int sc_main(int argc, char **argv)
     top->trace(tfp, 0);
     tfp->open("wave.vcd");
 
-    while (!Verilated::gotFinish()) {
-        sc_start(10, SC_NS);
+    if (!Verilated::gotFinish()) {
+        sc_start(1, SC_MS);
     }
 
     tfp->close();

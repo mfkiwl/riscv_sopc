@@ -7,7 +7,7 @@ all:
 	@echo "Verification based on verilator and SystemC"
 
 cmp:
-	verilator -Wno-fatal -f ../rtl/filelist/filelist.f  --top-module $(DESIGN) --sc --trace --exe sc_main.cpp
+	verilator -Wno-fatal -f ../rtl/filelist/filelist.f --top-module $(DESIGN) --sc --trace --exe sc_main.cpp
 	make -C obj_dir -f V$(DESIGN).mk V$(DESIGN)
 
 run:
